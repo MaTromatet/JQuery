@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>jQuery</title>
+    <script>
+        $(document).ready(function () {
+            $('div:nth-child(1) > table > tbody > tr > td:nth-child(5)').each(function (index) {
+                $(this).click(function () {
+                    console.log($(this).html());
+                    $('div:nth-child(2)').html($(this).html()).css({
+                        backgroundColor: "yellow",
+                        fontSize: "20px",
+                        width: "300px",
+                        height: "100px"
+                    }).slideToggle(800);
+                });
+            });
+            //.fadeToggle()
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>AAA</td>
+                    <td>BBB</td>
+                    <td>CCC</td>
+                    <td>DDD</td>
+                    <td>EEE</td>
+                </tr>
+                <tr>
+                    <td>FFF</td>
+                    <td>GGG</td>
+                    <td>HHH</td>
+                    <td>III</td>
+                    <td>JJJ</td>
+                </tr>
+                <tr>
+                    <td>KKK</td>
+                    <td>LLL</td>
+                    <td>MMM</td>
+                    <td>NNN</td>
+                    <td>OOO</td>
+                </tr>
+                <tr>
+                    <td>PPP</td>
+                    <td>QQQ</td>
+                    <td>RRR</td>
+                    <td>SSS</td>
+                    <td>TTT</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div></div>
+
+</body>
+
+</html>

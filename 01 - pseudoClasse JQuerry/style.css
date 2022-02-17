@@ -1,0 +1,63 @@
+div:first-of-type table {
+  border: 1px solid dimgray;
+}
+
+div:first-of-type table tr:first-of-type {
+  background-color: #10a710;
+}
+
+div:first-of-type table tr:nth-of-type(2n) {
+  background-color: #f7f776;
+}
+
+div:first-of-type table tr td {
+  border: 1px solid dimgray;
+  width: 100px;
+}
+
+div:first-of-type table tr td:last-of-type {
+  background-color: rgba(18, 21, 190, 0.5);
+}
+
+div:first-of-type table tr td:last-of-type:hover {
+  background-color: orangered;
+}
+
+div:nth-of-type(2) ul:nth-of-type(2) li:not(li:nth-of-type(n + 6)) {
+  color: #ca2d2d;
+}
+
+div:nth-of-type(2) ul:nth-of-type(3) li:nth-of-type(n + 5) {
+  color: #ca2d2d;
+}
+
+div:nth-of-type(2) ul:first-of-type li:nth-of-type(2n) {
+  color: #ca2d2d;
+}
+
+div:last-of-type button {
+  background-color: rgba(18, 21, 190, 0.5);
+  border: 1px solid #181111;
+  color: rgba(255, 255, 255, 0.883);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+div:last-of-type button:hover {
+  background-color: #f7f776;
+  color: #181111;
+}
+
+div:nth-of-type(3) input:last-of-type {
+  font-size: larger;
+}
+
+div:nth-of-type(3) input:last-of-type:hover {
+  background-color: rgba(18, 21, 190, 0.5);
+}
+
+div:nth-of-type(3) input:focus {
+  background-color: #f7f776;
+}
+/*# sourceMappingURL=style.css.map */
