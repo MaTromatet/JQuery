@@ -1,0 +1,5 @@
+Reprendre l'exercice de CSS3 "Pseudo-classes exo01"
+
+- Rajouter un événement clic sur les cellules de la dernière colonne
+- Au clic sur une cellule afficher une popup contenant le texte de la cellule
+- Continuer avec les consignes données en cours...
