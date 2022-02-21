@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+    <link href="ex-rideau-jquery.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var fontSizeInit = $("body").css("font-size");
+
+            $("img").width("100%");
+            $("#rideau").width($("div:first-of-type").width());
+            $("#rideau").height($("div:first-of-type").height());
+
+
+
+
+            $("button:first-of-type").on("click", function () {
+                var oldWidth = $("div:first-of-type").width();
+                var newWidth = oldWidth + 20;
+
+
+
+                var oldHeight = $("div:first-of-type").height();
+                var newHeight = oldHeight * (newWidth / oldWidth);
+                if (newWidth <= parseInt($("div:first-of-type").css("max-width")) && newHeight <= parseInt($("div:first-of-type").css("max-height"))) {
+                    var oldFontSize = $("h1").css("font-size");
+                    var newFontSize = (parseFloat(oldFontSize) / parseFloat(fontSizeInit)) + 0.1;
+                    $("div").width(newWidth).height(newHeight);
+                    // $("div:first-of-type").width($("div:first-of-type").width()+20);
+                    console.log(newFontSize);
+                    $("h1").css("font-size", newFontSize + "em");
+                }
+            })
+
+
+            $("button:nth-child(2)").on("click", function () {
+                var oldWidth = $("div:first-of-type").width();
+                var newWidth = oldWidth - 20;
+                var oldHeight = $("div:first-of-type").height();
+                var newHeight = oldHeight * (newWidth / oldWidth);
+                if (newWidth >= parseInt($("div:first-of-type").css("min-width")) && newHeight >= parseInt($("div:first-of-type").css("min-height"))) {
+
+                    var oldFontSize = $("h1").css("font-size");
+                    var newFontSize = (parseFloat(oldFontSize) / parseFloat(fontSizeInit)) - 0.1;
+
+                    $("div").width(newWidth).height(newHeight);
+                    $("h1").css("font-size", newFontSize + "em");
+                }
+
+
+            })
+
+
+            $("button:last-of-type").on("click", function () {
+                $("#rideau").toggle();
+            })
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <aside>
+        <button>+</button>
+        <button>-</button>
+        <br />
+        <button>#</button>
+    </aside>
+    <section>
+        <div><img src="montagne.jpg" /></div>
+        <div id="rideau">
+            <h1>Mon Rideau</h1>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+    <link href="ex-rideau-jquery.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+
+        var pasPx = 20;
+        var pasEm = 0.1;
+        var w;
+        var h;
+        var f;
+        var minW;
+        var maxW;
+
+        $(document).ready(function () {
+
+            // mettre le script ici
+            $('body section div img').css({ 'width': "100%" })
+            w = $('body section div:first-child').width();
+            $('body section div:nth-child(2)').width(w);
+            h = $('body section div:first-child').height();
+            $('body section div:nth-child(2)').height(h);
+            f = $('body').css('font-size');
+            minW = parseInt($('body section div').css('min-width'));
+            maxW = parseInt($('body section div').css('max-width'));
+
+            console.log(minW);
+
+            // bouton #
+            $('body aside button:nth-child(4)').click(function () {
+                console.log('#');
+                $('div#rideau').toggle();
+            });
+
+            $('body aside button:nth-child(1)').click(function () {
+                console.log('+');
+                rideauFlex(true)
+
+            })
+            $('body aside button:nth-child(2)').click(function () {
+                console.log('-');
+                rideauFlex(false)
+            })
+
+        });
+
+
+        function rideauFlex(sens) {
+            var w0 = $('body section div:first-child').width();
+            // expression ternaire
+            var w1 = (sens == true) ? w0 + pasPx : w0 - pasPx;
+            if(w1 < maxW && w1 > minW){
+                var h0 = $('body section div:first-child').height();
+                var h1 = w1 * (h / w);
+                $('body section div').width(w1);
+                $('body section div').height(h1);
+                var f0 = $('body section div#rideau h1').css('font-size');
+                var f1 = (sens) ? (parseFloat(f0) / parseFloat(f)) + pasEm : (parseFloat(f0) / parseFloat(f)) - pasEm ;
+                $('body section div#rideau h1').css('font-size', f1 + 'em');
+                console.log(f1);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <aside>
+        <button>+</button>
+        <button>-</button>
+        <br />
+        <button>#</button>
+    </aside>
+    <section>
+        <div><img src="montagne.jpg" /></div>
+        <div id="rideau">
+            <h1>Mon Rideau</h1>
+        </div>
+    </section>
+
+</body>
+
+</html>
